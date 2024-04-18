@@ -1,27 +1,16 @@
-[educaationalsp]2024/04/18 21:58:24 main.go:16: Hey, I started!
-[educaationalsp]2024/04/18 21:58:24 main.go:33: Received msg with method:  initialize
-[educaationalsp]2024/04/18 21:58:24 main.go:38: Not possible to parse. CONTENT: json: cannot unmarshal string into Go struct field InitializeRequest.method of type int
-[educaationalsp]2024/04/18 21:58:24 main.go:41: Connected to: Neovim 0.9.4
-[educaationalsp]2024/04/18 21:58:24 main.go:49: Reply to initialize
-[educaationalsp]2024/04/18 21:58:24 main.go:33: Received msg with method:  initialized
-[educaationalsp]2024/04/18 21:58:24 main.go:33: Received msg with method:  textDocument/didOpen
-[educaationalsp]2024/04/18 21:58:34 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:35 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:35 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:35 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:36 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:36 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:36 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:36 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:36 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:36 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:37 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:37 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:37 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:37 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:37 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:37 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:38 main.go:33: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 21:58:39 main.go:33: Received msg with method:  textDocument/didSave
-[educaationalsp]2024/04/18 21:58:39 main.go:33: Received msg with method:  textDocument/didSave
-[educaationalsp]2024/04/18 21:58:39 main.go:33: Received msg with method:  shutdown
+[educaationalsp]2024/04/18 23:27:46 main.go:17: Hey, I started!
+[educaationalsp]2024/04/18 23:27:46 main.go:35: Received msg with method:  initialize
+[educaationalsp]2024/04/18 23:27:46 main.go:40: Not possible to parse. CONTENT: json: cannot unmarshal string into Go struct field InitializeRequest.method of type int
+[educaationalsp]2024/04/18 23:27:46 main.go:43: Connected to: Neovim 0.9.4
+[educaationalsp]2024/04/18 23:27:46 main.go:51: Reply to initialize
+[educaationalsp]2024/04/18 23:27:46 main.go:35: Received msg with method:  initialized
+[educaationalsp]2024/04/18 23:27:46 main.go:35: Received msg with method:  textDocument/didOpen
+[educaationalsp]2024/04/18 23:27:46 main.go:58: Open: file:///home/reusebio/projets/educationalsp/README.md
+[educaationalsp]2024/04/18 23:27:49 main.go:35: Received msg with method:  textDocument/didChange
+[educaationalsp]2024/04/18 23:27:49 main.go:70: Changed: file:///home/reusebio/projets/educationalsp/README.md
+[educaationalsp]2024/04/18 23:27:49 main.go:35: Received msg with method:  textDocument/didChange
+[educaationalsp]2024/04/18 23:27:49 main.go:70: Changed: file:///home/reusebio/projets/educationalsp/README.md
+[educaationalsp]2024/04/18 23:27:50 main.go:35: Received msg with method:  textDocument/didChange
+[educaationalsp]2024/04/18 23:27:50 main.go:70: Changed: file:///home/reusebio/projets/educationalsp/README.md
+[educaationalsp]2024/04/18 23:27:51 main.go:35: Received msg with method:  textDocument/didSave
+[educaationalsp]2024/04/18 23:27:52 main.go:35: Received msg with method:  shutdown
