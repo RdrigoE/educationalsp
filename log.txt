@@ -1,0 +1,1 @@
+[educaationalsp]2024/04/17 23:09:02 main.go:14: Hey, I started!
