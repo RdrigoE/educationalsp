@@ -1,16 +1,8 @@
-[educaationalsp]2024/04/18 23:27:46 main.go:17: Hey, I started!
-[educaationalsp]2024/04/18 23:27:46 main.go:35: Received msg with method:  initialize
-[educaationalsp]2024/04/18 23:27:46 main.go:40: Not possible to parse. CONTENT: json: cannot unmarshal string into Go struct field InitializeRequest.method of type int
-[educaationalsp]2024/04/18 23:27:46 main.go:43: Connected to: Neovim 0.9.4
-[educaationalsp]2024/04/18 23:27:46 main.go:51: Reply to initialize
-[educaationalsp]2024/04/18 23:27:46 main.go:35: Received msg with method:  initialized
-[educaationalsp]2024/04/18 23:27:46 main.go:35: Received msg with method:  textDocument/didOpen
-[educaationalsp]2024/04/18 23:27:46 main.go:58: Open: file:///home/reusebio/projets/educationalsp/README.md
-[educaationalsp]2024/04/18 23:27:49 main.go:35: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 23:27:49 main.go:70: Changed: file:///home/reusebio/projets/educationalsp/README.md
-[educaationalsp]2024/04/18 23:27:49 main.go:35: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 23:27:49 main.go:70: Changed: file:///home/reusebio/projets/educationalsp/README.md
-[educaationalsp]2024/04/18 23:27:50 main.go:35: Received msg with method:  textDocument/didChange
-[educaationalsp]2024/04/18 23:27:50 main.go:70: Changed: file:///home/reusebio/projets/educationalsp/README.md
-[educaationalsp]2024/04/18 23:27:51 main.go:35: Received msg with method:  textDocument/didSave
-[educaationalsp]2024/04/18 23:27:52 main.go:35: Received msg with method:  shutdown
+[educaationalsp]2024/04/19 21:00:21 main.go:18: Hey, I started!
+[educaationalsp]2024/04/19 21:00:21 main.go:31: initialize
+[educaationalsp]2024/04/19 21:00:21 main.go:37: Received msg with method:  initialize
+[educaationalsp]2024/04/19 21:00:21 main.go:42: Not possible to parse. CONTENT: json: cannot unmarshal string into Go struct field InitializeRequest.method of type int
+[educaationalsp]2024/04/19 21:00:21 main.go:45: Connected to: Neovim 0.9.5
+[educaationalsp]2024/04/19 21:00:21 main.go:51: Reply to initialize
+[educaationalsp]2024/04/19 21:00:21 main.go:31: initialized
+[educaationalsp]2024/04/19 21:00:21 main.go:37: Received msg with method:  initialized

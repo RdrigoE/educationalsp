@@ -7,19 +7,20 @@ import (
 	"educationalsp/rpc"
 	"encoding/json"
 	"fmt"
+	"io"
 	"log"
 	"os"
 )
 
 func main() {
 	fmt.Println("hi")
-	logger := getLogger("/home/reusebio/projets/educationalsp/log.txt")
+	logger := getLogger("/home/reusebio/projects/educationalsp/log.txt")
 	logger.Println("Hey, I started!")
 
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Split(rpc.Split)
 	state := analysis.NewState()
-
+	writer := os.Stdout
 	for scanner.Scan() {
 		msg := scanner.Bytes()
 		method, contents, err := rpc.DecodeMessage(msg)
@@ -27,11 +28,12 @@ func main() {
 			logger.Printf("ERROR: %s", err)
 			continue
 		}
-		handleMessage(logger, state, method, contents)
+		logger.Print(method)
+		handleMessage(logger, writer, state, method, contents)
 	}
 }
 
-func handleMessage(logger *log.Logger, state analysis.State, method string, contents []byte) {
+func handleMessage(logger *log.Logger, writer io.Writer, state analysis.State, method string, contents []byte) {
 	logger.Println("Received msg with method: ", method)
 	switch method {
 	case "initialize":
@@ -45,9 +47,7 @@ func handleMessage(logger *log.Logger, state analysis.State, method string, cont
 			request.Params.ClientInfo.Version,
 		)
 		msg := lsp.NewInitilizeResponse(request.ID)
-		reply := rpc.EncodeMessage(msg)
-		writer := os.Stdout
-		writer.Write([]byte(reply))
+		writeResponse(writer, msg)
 		logger.Print("Reply to initialize")
 	case "textDocument/didOpen":
 		var request lsp.DidOpenTextDocumentNotification
@@ -71,9 +71,50 @@ func handleMessage(logger *log.Logger, state analysis.State, method string, cont
 		for _, change := range request.Params.ContentChanges {
 			state.UpdateDocument(request.Params.TextDocument.URI, change.Text)
 		}
+	case "textDocument/hover":
+		var request lsp.HoverRequest
+		if err := json.Unmarshal(contents, &request); err != nil {
+			logger.Printf("textDocument/hover: %s", err)
+		}
+		// Create a response and write back
+		msg := state.Hover(
+			request.ID,
+			request.Params.TextDocument.URI,
+			request.Params.Position,
+		)
+		writeResponse(writer, msg)
 
-		// Sync the state
+	case "textDocument/definition":
+		var request lsp.DefinitionRequest
+		if err := json.Unmarshal(contents, &request); err != nil {
+			logger.Printf("textDocument/definition: %s", err)
+		}
+		// Create a response and write back
+		msg := state.Definition(
+			request.ID,
+			request.Params.TextDocument.URI,
+			request.Params.Position,
+		)
+		writeResponse(writer, msg)
+
+	case "textDocument/completion":
+		var request lsp.CompletionRequest
+		if err := json.Unmarshal(contents, &request); err != nil {
+			logger.Printf("textDocument/definition: %s", err)
+		}
+		// Create a response and write back
+		msg := state.TextDocumentCompletion(
+			request.ID,
+			request.Params.TextDocument.URI,
+			request.Params.Position,
+		)
+		writeResponse(writer, msg)
 	}
+}
+
+func writeResponse(writer io.Writer, msg any) {
+	reply := rpc.EncodeMessage(msg)
+	writer.Write([]byte(reply))
 }
 
 func getLogger(filename string) *log.Logger {
